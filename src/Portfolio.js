@@ -9,12 +9,13 @@ const Portfolio = () => {
 
   // Handle mouse movement for cursor effect
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  const handleMouseMove = (e) => {
+    console.log("Mouse position:", e.clientX, e.clientY);
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  };
+  window.addEventListener('mousemove', handleMouseMove);
+  return () => window.removeEventListener('mousemove', handleMouseMove);
+}, []);
 
   // Handle scroll progress
   useEffect(() => {
