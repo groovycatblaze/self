@@ -68,14 +68,23 @@ const Portfolio = () => {
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
       {/* Cursor follower */}
-      <div 
-        className="fixed w-8 h-8 bg-orange-500 rounded-full blur-xl pointer-events-none opacity-50 transition-all duration-200"
-        style={{ 
-          left: mousePosition.x - 16,
-          top: mousePosition.y - 16,
-          transform: `scale(${scrollProgress / 50 + 1})`
-        }}
-      />
+<div 
+  style={{ 
+    position: 'fixed',
+    width: '32px',
+    height: '32px',
+    backgroundColor: '#f97316', // orange-500 color
+    borderRadius: '50%',
+    filter: 'blur(10px)',
+    pointerEvents: 'none',
+    opacity: 0.7,
+    zIndex: 50,
+    left: `${mousePosition.x - 16}px`,
+    top: `${mousePosition.y - 16}px`,
+    transform: `scale(${scrollProgress / 50 + 1})`,
+    transition: 'all 100ms ease'
+  }}
+/>
 
       {/* Progress gradient */}
       <div 
